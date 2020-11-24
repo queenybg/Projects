@@ -1,0 +1,11 @@
+Function Main
+    ... I used Declare and put the variable as name and then put the type as string
+    Declare String name
+    
+    ... below I displayed my name as the expression and the variable as name 
+    ... 
+    Assign name = "Monika Laleva"
+    
+    ... The expression below was put as "Hello, & name" to say hello and then my name
+    Output "Hello, " & name
+End

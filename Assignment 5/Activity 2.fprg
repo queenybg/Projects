@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="lalev"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-09-08 03:59:59 PM"/>
+        <attribute name="created" value="bGFsZXY7TVNJOzIwMjAtMDktMDg7MDE6NDI6MjIgUE07MjA0MQ=="/>
+        <attribute name="edited" value="bGFsZXY7TVNJOzIwMjAtMDktMDg7MDM6NTk6NTkgUE07MjsyMTcw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="This program calculates your age and it displays how long you've lived for in months,days,hours and seconds. I use Python as my source code to describe how long a person has lived for. "/>
+            <declare name="years" type="Real" array="False" size=""/>
+            <declare name="months" type="Real" array="False" size=""/>
+            <declare name="days" type="Real" array="False" size=""/>
+            <declare name="hours" type="Real" array="False" size=""/>
+            <declare name="seconds" type="Real" array="False" size=""/>
+            <assign variable="years" expression="GetYears()"/>
+            <assign variable="months" expression="CalculateMonths(years)"/>
+            <assign variable="days" expression="CalculateDays(years)"/>
+            <assign variable="hours" expression="CalculateHours(days)"/>
+            <assign variable="seconds" expression="CalculateSeconds(hours)"/>
+            <call expression="result(years,months,days,hours,seconds)"/>
+        </body>
+    </function>
+    <function name="CalculateDays" type="Real" variable="days">
+        <parameters>
+            <parameter name="years" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="days" type="Real" array="False" size=""/>
+            <assign variable="days" expression="years * 365"/>
+        </body>
+    </function>
+    <function name="CalculateHours" type="Real" variable="Hours">
+        <parameters>
+            <parameter name="days" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="Hours" type="Real" array="False" size=""/>
+            <assign variable="hours" expression="days * 24"/>
+        </body>
+    </function>
+    <function name="CalculateMonths" type="Real" variable="months">
+        <parameters>
+            <parameter name="years" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="months" type="Real" array="False" size=""/>
+            <assign variable="months" expression="years * 12"/>
+        </body>
+    </function>
+    <function name="CalculateSeconds" type="Real" variable="Seconds">
+        <parameters>
+            <parameter name="hours" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="Seconds" type="Real" array="False" size=""/>
+            <assign variable="seconds" expression="hours * 60 * 60"/>
+        </body>
+    </function>
+    <function name="GetYears" type="Real" variable="years">
+        <parameters/>
+        <body>
+            <declare name="years" type="Real" array="False" size=""/>
+            <output expression="&quot;how old are you?&quot;" newline="True"/>
+            <input variable="years"/>
+        </body>
+    </function>
+    <function name="result" type="None" variable="">
+        <parameters>
+            <parameter name="years" type="Real" array="False"/>
+            <parameter name="months" type="Real" array="False"/>
+            <parameter name="days" type="Real" array="False"/>
+            <parameter name="hours" type="Real" array="False"/>
+            <parameter name="seconds" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <output expression="&quot;You are: &quot; &amp; years &amp; &quot; years old, and &quot; &amp; months &amp; &quot; months old, &quot; &amp; days &amp; &quot; days old, &quot; &amp; hours &amp; &quot; hours old, and &quot; &amp; seconds &amp; &quot; seconds old.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

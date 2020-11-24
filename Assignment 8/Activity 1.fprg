@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="lalev"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-10-03 01:27:28 PM"/>
+        <attribute name="created" value="bGFsZXY7TVNJOzIwMjAtMDktMjU7MDE6MTc6MzQgUE07MjA0NQ=="/>
+        <attribute name="edited" value="bGFsZXY7TVNJOzIwMjAtMTAtMDM7MDE6Mjc6MjggUE07NzsyMTUx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="This is a multiplication program that asks the user to input a value that they want to multiply by, and then how many expressions the user wants."/>
+            <declare name="value" type="Real" array="False" size=""/>
+            <declare name="expressions" type="Real" array="False" size=""/>
+            <assign variable="value" expression="GetValue()"/>
+            <assign variable="expressions" expression="GetExpressions()"/>
+            <call expression="WhileLoop(value,expressions)"/>
+        </body>
+    </function>
+    <function name="GetExpressions" type="Real" variable="expressions">
+        <parameters/>
+        <body>
+            <declare name="expressions" type="Real" array="False" size=""/>
+            <output expression="&quot;How many expressions do you want?&quot;" newline="True"/>
+            <input variable="expressions"/>
+        </body>
+    </function>
+    <function name="GetValue" type="Real" variable="value">
+        <parameters/>
+        <body>
+            <declare name="value" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter a value:&quot;" newline="True"/>
+            <input variable="value"/>
+        </body>
+    </function>
+    <function name="WhileLoop" type="None" variable="">
+        <parameters>
+            <parameter name="value" type="Real" array="False"/>
+            <parameter name="expressions" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <output expression="&quot;While loop is listing multiplication expressions for the value of &quot; &amp; value &amp; &quot; :&quot;" newline="True"/>
+            <declare name="count" type="Real" array="False" size=""/>
+            <assign variable="count" expression="1"/>
+            <while expression="count &lt;= expressions">
+                <output expression="value &amp; &quot; * &quot; &amp; count &amp; &quot; = &quot; &amp; count * value" newline="True"/>
+                <assign variable="count" expression="count + 1"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

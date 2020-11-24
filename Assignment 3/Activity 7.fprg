@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="lalev"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-08-31 10:57:00 PM"/>
+        <attribute name="created" value="bGFsZXY7TVNJOzIwMjAtMDgtMzE7MDk6MTE6MjQgUE07MjA0Mg=="/>
+        <attribute name="edited" value="bGFsZXY7TVNJOzIwMjAtMDgtMzE7MTA6NTc6MDAgUE07MzsyMTQ4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="This program coverts human year to dog years. It shows how old a dog is from human years to dog years. Used python as my source code language to show how old a dog is coverted from human years to dog years."/>
+            <declare name="dogname" type="String" array="False" size=""/>
+            <declare name="humanyears" type="Integer" array="False" size=""/>
+            <declare name="dogyears" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter your dogs name: &quot;" newline="True"/>
+            <input variable="dogname"/>
+            <output expression="&quot;Enter human years for your dog: &quot;" newline="True"/>
+            <input variable="humanyears"/>
+            <assign variable="humanyears" expression="humanyears * 7"/>
+            <output expression="&quot;Your dog &quot; &amp; dogname &amp; &quot; is &quot; &amp; humanyears &amp; &quot; dog years old. &quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

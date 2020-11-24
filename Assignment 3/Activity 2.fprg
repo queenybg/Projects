@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="lalev"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-08-31 10:56:02 PM"/>
+        <attribute name="created" value="bGFsZXY7TVNJOzIwMjAtMDgtMzE7MDU6MTA6MTMgUE07MjAzNQ=="/>
+        <attribute name="edited" value="bGFsZXY7TVNJOzIwMjAtMDgtMzE7MTA6NTY6MDIgUE07MzsyMTQ5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="This program calculates your age and it displays how long you've liced for in months,days,hours and seconds. I use Python as my source code to describe how long a person has lived for. "/>
+            <declare name="years" type="Real" array="False" size=""/>
+            <declare name="months" type="Real" array="False" size=""/>
+            <declare name="days" type="Real" array="False" size=""/>
+            <declare name="hours" type="Real" array="False" size=""/>
+            <declare name="seconds" type="Real" array="False" size=""/>
+            <output expression="&quot;How old are you?&quot;" newline="True"/>
+            <input variable="years"/>
+            <assign variable="months" expression="years * 12"/>
+            <assign variable="days" expression="years * 365"/>
+            <assign variable="hours" expression="days * 24"/>
+            <assign variable="seconds" expression="hours * 60 * 60"/>
+            <output expression="&quot;You are: &quot; &amp; years &amp; &quot; years old, &quot; &amp; months &amp; &quot; months old, &quot; &amp; days &amp; &quot; days old, &quot; &amp; hours &amp; &quot; hours old, and &quot; &amp; seconds &amp; &quot; seconds old.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

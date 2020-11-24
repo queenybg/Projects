@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="lalev"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-10-14 12:32:17 PM"/>
+        <attribute name="created" value="bGFsZXY7TVNJOzIwMjAtMTAtMTM7MDI6MjU6MzEgQU07MjAxNg=="/>
+        <attribute name="edited" value="bGFsZXY7TVNJOzIwMjAtMTAtMTM7MDI6MzE6MTIgQU07NDtmMTQwdTEyO0YxNDBXMTI7MjAxOS0xMC0xNDswNToxNTo0NSBQTTtfU2VjcmV0TnVtYmVyX0NvbXB1dGVyR3Vlc3NfRE9fTG9vcC5mcHJnOzg0MDY="/>
+        <attribute name="edited" value="bGFsZXY7TVNJOzIwMjAtMTAtMTQ7MTI6MzI6MTcgUE07NTsyMTQ3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="This is a program that can guess your number. I am using python as my source code for the program."/>
+            <declare name="guesses" type="Integer" array="False" size=""/>
+            <declare name="guessNumber" type="Integer" array="False" size=""/>
+            <declare name="lowpoint" type="Integer" array="False" size=""/>
+            <declare name="highpoint" type="Integer" array="False" size=""/>
+            <assign variable="guesses" expression="1"/>
+            <assign variable="guessNumber" expression="50"/>
+            <assign variable="lowpoint" expression="1"/>
+            <assign variable="highpoint" expression="100"/>
+            <call expression="PlayGame(guesses,guessNumber,lowpoint,highpoint)"/>
+        </body>
+    </function>
+    <function name="PlayGame" type="None" variable="">
+        <parameters>
+            <parameter name="guesses" type="Integer" array="False"/>
+            <parameter name="guessNumber" type="Integer" array="False"/>
+            <parameter name="lowpoint" type="Integer" array="False"/>
+            <parameter name="highpoint" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <do expression="guesses &gt;= 0">
+                <output expression="&quot;My guess is &quot; &amp; guessNumber &amp; &quot; was my guess too high (h), too low (l), or equal(e) to your number?&quot;" newline="True"/>
+                <declare name="response" type="String" array="False" size=""/>
+                <input variable="response"/>
+                <if expression="response == &quot;h&quot; or response == &quot;high&quot;">
+                    <then>
+                        <assign variable="highpoint" expression="guessNumber"/>
+                        <assign variable="guesses" expression="guesses + 1"/>
+                        <assign variable="guessNumber" expression="(((highpoint - lowpoint)/2)+lowpoint)"/>
+                        <if expression="guessNumber &lt;= lowpoint">
+                            <then>
+                                <assign variable="guessNumber" expression="guessNumber + 1"/>
+                            </then>
+                            <else/>
+                        </if>
+                        <if expression="highpoint - lowpoint == 2">
+                            <then>
+                                <assign variable="guessNumber" expression="lowpoint + 1"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </then>
+                    <else>
+                        <if expression="response == &quot;l&quot; or response == &quot;low&quot;">
+                            <then>
+                                <assign variable="lowpoint" expression="guessNumber"/>
+                                <assign variable="guesses" expression="guesses + 1"/>
+                                <assign variable="guessNumber" expression="(((highpoint - lowpoint)/2)+lowpoint)"/>
+                                <if expression="guessNumber &lt;= lowpoint">
+                                    <then>
+                                        <assign variable="guessNumber" expression="guessNumber + 1"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                                <if expression="highpoint - lowpoint == 2">
+                                    <then>
+                                        <assign variable="guessNumber" expression="lowpoint + 1"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </then>
+                            <else>
+                                <if expression="response == &quot;e&quot; or response == &quot;equal&quot;">
+                                    <then>
+                                        <call expression="Result(guessNumber,guesses)"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </do>
+        </body>
+    </function>
+    <function name="Result" type="None" variable="">
+        <parameters>
+            <parameter name="guessNumber" type="Integer" array="False"/>
+            <parameter name="guesses" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <output expression="&quot;I guessed your number! And it only took me &quot; &amp; guesses &amp; &quot; guesses!&quot;" newline="True"/>
+            <breakpoint/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="lalev"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-08-22 03:28:58 PM"/>
+        <attribute name="created" value="bGFsZXY7TVNJOzIwMjAtMDgtMTk7MDI6MTI6MjQgUE07MjA0Mg=="/>
+        <attribute name="edited" value="bGFsZXY7TVNJOzIwMjAtMDgtMjI7MDM6Mjg6NTggUE07ODsyMTY2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="I used Declare and put the variable as name and then put the type as string"/>
+            <declare name="name" type="String" array="False" size=""/>
+            <comment text="below I displayed my name as the expression and the variable as name&#13;&#10;"/>
+            <assign variable="name" expression="&quot;Monika Laleva&quot;"/>
+            <comment text="The expression below was put as &quot;Hello, &amp; name&quot; to say hello and then my name"/>
+            <output expression="&quot;Hello, &quot; &amp; name" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
